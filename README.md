@@ -40,3 +40,23 @@ Elle permet de gérer les employés avec les opérations CRUD :
 
 ```bash
 git clone https://github.com/Rochel-10/Gestion_Employe.git
+
+---
+
+##  Aperçu du projet
+
+### Liste des employés
+![liste](screenshots/list_employe.png)
+
+### Formulaire d'ajout
+![formulaire](screenshots/ajoute_employe.png)
+
+### Modification des employés
+![modifier](screenshots/modifie_employe.png)
+
+### Suppression des employés
+![supprimer](screenshots/supprime_employe.png)
+
+
+
+---
