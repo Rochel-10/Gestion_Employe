@@ -1,0 +1,19 @@
+{% extends "employe/base.html" %}
+
+{% block content %}
+<!-- methode POST pour envoyer les informations -->
+<!-- creer un formulaire avec form, espacer de 4uniter de haut en bas -->
+<form method="POST" class="space-y-4">
+    <!-- tres important: mettre un CRF TOKEN dans la formulaire -->
+    <!-- c'est un elt qui genere un token unique et qui  permet de securiser les formulaires
+     django va securiser avec un identifiant unique apres -->
+    {% csrf_token %}
+    <!-- nous allons afficher les differents champs et on prend le formulaire qu'on a recue et
+     .nom, ex: form.nom, le champs d'entrer de nom est maintenant creer-->
+    {{form.nom}}
+    {{form.email}}
+    {{form.poste}}
+    {{form.salaire}}
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+{% endblock %}

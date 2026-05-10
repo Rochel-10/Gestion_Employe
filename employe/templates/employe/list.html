@@ -1,0 +1,41 @@
+<!-- ! ou html:5 pour voir la structure de l'html au depart-->
+<!-- creer un  autre fichier html de base qui va etre la base
+    par exemple inserer le menu de tous les pages, inserer dans cette html de base
+    ce fichier html de base va etre le héritié de tous les autres fihciers
+    -->
+<!-- on va heriter base.html par list.html-->
+{% extends "employe/base.html" %}
+
+{% block content %}
+<!-- ce qui va etre inserer ici va etre inserer et afficher
+ dans la meme block content dans list.html a l'aide de l'heritage-->
+<div class="w-full bg-base-200">
+    <div class="mb-4">
+        <a href="{% url 'ajouter_employe' %}" class="btn btn-primary w-full">Ajouter un employé</a>
+    </div>
+
+    <!-- space-y-4:les elements dans la liste afficher sont separer de 4 unités verticalement -->
+    <div class="space-y-4 w-full">
+        <!-- le debut du boucle pour faire afficher les employes en liste -->
+        {% for emp in employes %}
+        <div class="p-4 bg-base-100 rounded-lg w-full flex justify-between items-center">
+            <div class="space-y-2">
+                <p class="font-bold text-lg">{{emp.nom}}</p>
+                <p class="badge badge-soft badge-primary">{{emp.email}}</p>
+                <div class="flex gap-2">
+                    <p class="badge badge-soft badge-primary">{{emp.poste}}</p>
+                    <p class="badge badge-dash badge-primary">{{emp.salaire}} Euro</p>
+                </div>
+            </div>
+            <div class="space-x-2">
+                <!-- emp.id: passer l'id de l'employer, pour ouvrir la page et modifier -->
+                <!-- redirection de la page a l'aide de l'url, et l'id -->
+                <a href="{% url 'modifier_employe' emp.id %}" class="btn btn-primary btn-sm">Modifier</a>
+                <a href="{% url 'supprimer_employe' emp.id %}" class="btn btn-primary btn-soft btn-sm">Supprimer</a>
+            </div>
+        </div>
+        <!-- la fin de la boucle -->
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

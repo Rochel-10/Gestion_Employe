@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- configurer le theme forest ici -->
+<html lang="en" data-theme="forest">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion Employé</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!--<link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="flex justify-center mt-32">
+        <div class="flex flex-col w-3xl bg-base-200 rounded-xl p-6">
+            <div class="w-full h-fit">
+                <!-- block qui permet d'inserer directement du HTML a l'interieur -->
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

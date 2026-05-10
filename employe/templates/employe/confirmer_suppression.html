@@ -1,0 +1,17 @@
+{% extends "employe/base.html" %}
+
+{% block content %}
+<!-- methode POST pour envoyer les informations -->
+<!-- creer un formulaire avec form, espacer de 4uniter de haut en bas -->
+<form method="POST" class="space-y-4 flex flex-col">
+    <!-- demander a l'utilisateur s'il est sur de supprimer avec span et bold avec strong -->
+    <span class="text-center">Est-vous sur de vouloir supprimer <strong>{{employe.nom}}</strong></span>
+    <!-- tres important: mettre un CRF TOKEN dans la formulaire -->
+    <!-- c'est un elt qui genere un token unique et qui  permet de securiser les formulaires
+     django va securiser avec un identifiant unique apres -->
+    {% csrf_token %}
+    <!-- soumettre la formulaire avec la methode POST au haut -->
+    <button type="submit" class="btn btn-error">Oui, supprimer</button>
+    <a href="{% url 'liste_employes' %}" class="btn btn-primary w-full">Annuler</a>
+</form>
+{% endblock %}
